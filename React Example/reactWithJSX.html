@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <div id="root"></div>
+  </body>
+  <script crossoriginsrc="https://unpkg.com/react@17/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel"></script>
+  <script>
+    const root = document.getElementById("root");
+
+    function Title1(){
+        return(
+            <h3 id ="title" onMouseEnter={()=> console.log("mouse enter")}>Hello I'm a title</h3>
+        );
+    }
+
+    //this arrow function works same as 'function & return grammar'
+    const Title2 = () => (<h3 id ="title" onMouseEnter={()=> console.log("mouse enter")}>Hello I'm a title</h3>);
+    // const btn = React.createElemet("button", {onClick: () => console.log("i'm clicked")}, "Click me");
+    
+    // babel understandable statement what is JSX to web
+
+    const Container = () => (
+    <div>
+        <Title1 />
+        <Title2 />
+    </div>
+    );
+    
+    ReactDOM.render(<Container />, root);
+  </script>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <div id="root"></div>
+  </body>
+  <script crossoriginsrc="https://unpkg.com/react@17/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+  <script>
+    // 3. grab it by id
+    const root = document.getElementById("root");
+
+    // 1. create element; tag, property, content
+    const span = React.createElemet("h3", { id: "sexy-span" }, "hello I'm a span");
+    // writing on... this tell react that listening event
+    const btn = React.createElemet("button", {onClick: () => console.log("i'm clicked")}, "Click me");
+    const container = React.createElemet("div", null, [span, btn]);
+
+    // 2. send it to html
+    //ReactDOM.render(span, root);
+    //ReactDOM.render(btn, root);
+    ReactDOM.render(container, root);
+  </script>
+</html>
